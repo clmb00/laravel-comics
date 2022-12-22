@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('comics');
+    $comics_list = include_once '../resources/data/comics.php';
+    return view('comics', compact('comics_list'));
 })->name('comics');
 
 Route::get('/characters', function () {
