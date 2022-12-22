@@ -42,3 +42,7 @@ Route::get('/shop', function () {
 Route::get('/videos', function () {
     return view('videos');
 })->name('videos');
+
+Route::get('/info_comic', function () {
+    return view('info_comic');
+})->name('info');
