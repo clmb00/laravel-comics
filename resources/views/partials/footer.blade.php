@@ -5,13 +5,13 @@
             <div>
               <h3>Dc Comics</h3>
               <ul>
-                <li><a href="#">Charachters</a></li>
-                <li><a href="#">Comics</a></li>
-                <li><a href="#">Movies</a></li>
-                <li><a href="#">Tv</a></li>
-                <li><a href="#">Games</a></li>
-                <li><a href="#">Videos</a></li>
-                <li><a href="#">News</a></li>
+                <li><a href="{{ route('characters') }}">Charachters</a></li>
+                <li><a href="{{ route('comics') }}">Comics</a></li>
+                <li><a href="{{ route('movies') }}">Movies</a></li>
+                <li><a href="{{ route('tv') }}">Tv</a></li>
+                <li><a href="{{ route('games') }}">Games</a></li>
+                <li><a href="{{ route('videos') }}">Videos</a></li>
+                <li><a href="{{ route('news') }}">News</a></li>
               </ul>
             </div>
             <div>
