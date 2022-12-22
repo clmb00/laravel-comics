@@ -1,1 +1,181 @@
-@import '~bootstrap/scss/bootstrap'
+// @import '~bootstrap/scss/bootstrap'
+
+@use './partials/variables' as *;
+@use './partials/mixin' as *;
+
+// GENERAL
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+img{
+    max-width: 100%;
+}
+
+.container{
+    width: 70%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.blank_page{
+    margin-block: 4rem;
+    text-align: center;
+    font-size: 4em;
+}
+
+// HEADER
+header{
+    height: $header-height;
+    background-color: #fff;
+
+    .container{
+        @include flex('vertical');
+        justify-content: space-between;
+    }
+
+    .logo{
+        width: 80px;
+    }
+
+    ul{
+        height: $header-height;
+    }
+
+    li{
+        height: 100%;
+        line-height: 120px;
+        text-align: center;
+        min-width: 30px;
+        display: inline-block;
+        margin-left: 30px;
+        &.active{
+            color: $blue;
+            border-bottom: 5px solid $blue;
+            a{
+            color: $blue;
+            }
+        }
+        a{
+        font-size: .85rem;
+        color: $black;
+        &:hover{
+            color: $blue;
+        }
+        }
+    }
+}
+
+// FOOTER
+footer{
+    background-color: $l-black;
+    background-image: url("../assets/img/footer-bg.jpg");
+    background-size: cover;
+    .container{
+      background-image: url("../assets/img/dc-logo-bg.png");
+      background-position: right;
+      background-repeat: no-repeat;
+    }
+    #left{
+      padding-block: 20px;
+      height: $footer-height;
+    }
+}
+
+  footer nav{
+    @include flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    height: 100%;
+    div{
+      margin-right: 20px;
+      h3{
+        font-size: 1.2rem;
+        color: white;
+        padding-block: 10px;
+      }
+      ul{
+        li{
+          padding-block: 1px;
+          a{
+            color: $grey;
+            font-size: .8rem;
+            &:hover{
+              color: $blue;
+            }
+          }
+        }
+      }
+    }
+}
+
+#social-bar{
+    height: $footer-social-height;
+    background-color: $l-black;
+    .container{
+      @include flex('vertical');
+      justify-content: space-between;
+      button{
+        cursor: pointer;
+        padding: 12px;
+        border: 2px solid $blue;
+        color: white;
+        background-color: $background-button;
+        text-transform: uppercase;
+        position: relative;
+        z-index: 1;
+        transition: color .5s ease-in-out;
+        &:hover{
+          color: $blue;
+        }
+        &::before{
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: white;
+          z-index: -1;
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: transform .4s ease-in-out;
+        }
+        &:hover::before{
+          transform: scaleX(1);
+        }
+      }
+      .social{
+        @include flex;
+        a{
+          color: $blue;
+          text-transform: uppercase;
+          font-weight: bold;
+          margin-right: 20px;
+          line-height: $footer-social-height;
+          img{
+            vertical-align: middle;
+            &:hover{
+              filter: brightness(2);
+            }
+          }
+        }
+      }
+    }
+}

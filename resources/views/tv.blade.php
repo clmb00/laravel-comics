@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('title')
-    Comics
+    Tv
 @endsection
 
 @section('content')
-    <main>
-        Comics
+    <main class="blank_page">
+        Tv
     </main>
 @endsection
