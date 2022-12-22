@@ -179,3 +179,106 @@ footer{
       }
     }
 }
+
+// COMICS PAGE
+#jumbotron{
+    background-image: url('../img/jumbotron.jpg');
+    background-size: cover;
+    background-position: top;
+    height: $jumbo-height;
+}
+
+main.comics{
+    background-color: $black;
+    color: white;
+
+    .container{
+        position: relative;
+    }
+
+    h1, button{
+        text-transform: uppercase;
+    }
+
+    h1{
+        font-size: 1.8rem;
+        padding: 10px 20px;
+        background-color: $blue;
+        position: absolute;
+        transform: translateY(-50%);
+    }
+
+    .card-group{
+        @include flex();
+        flex-wrap: wrap;
+        padding-block: 50px;
+        row-gap: 40px;
+    }
+
+    .button-container{
+        text-align: center;
+
+        button{
+        margin-bottom: 25px;
+        padding: 10px 50px;
+        border: none;
+        background-color: $blue;
+        font-size: .8rem;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        &:hover{
+            filter: brightness(1.2);
+        }
+        }
+    }
+
+    .card{
+        padding-inline: 10px;
+        width: $width_card;
+    }
+
+    .cover{
+        width: 100%;
+        aspect-ratio: 1/1;
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: top;
+        }
+    }
+
+    h4{
+        margin-top: 10px;
+        text-transform: uppercase;
+        font-size: .8rem;
+    }
+}
+
+// SECTION LINKS
+
+section{
+    background-color: $blue;
+    color: white;
+    .container{
+      height: $blue-section-height;
+      @include flex('vertical');
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
+    div{
+      @include flex('both');
+      .logo{
+        width: 50px;
+        margin-right: 10px;
+        img{
+          height: 50px;
+        }
+      }
+      a{
+        font-size: .8rem;
+        white-space: nowrap;
+      }
+    }
+}

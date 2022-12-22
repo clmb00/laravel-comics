@@ -10,6 +10,7 @@
 
     @include('partials.header')
     @yield('content')
+    @yield('section_links')
     @include('partials.footer')
 
 </body>
