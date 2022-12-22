@@ -34,7 +34,7 @@ img{
 }
 
 .blank_page{
-    margin-block: 4rem;
+    margin-block: 6rem;
     text-align: center;
     font-size: 4em;
 }
@@ -84,10 +84,10 @@ header{
 // FOOTER
 footer{
     background-color: $l-black;
-    background-image: url("../assets/img/footer-bg.jpg");
+    background-image: url("../img/footer-bg.jpg");
     background-size: cover;
-    .container{
-      background-image: url("../assets/img/dc-logo-bg.png");
+    .container.top{
+      background-image: url("../img/dc-logo-bg.png");
       background-position: right;
       background-repeat: no-repeat;
     }

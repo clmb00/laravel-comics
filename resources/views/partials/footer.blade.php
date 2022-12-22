@@ -1,5 +1,5 @@
 <footer>
-    <div class="container">
+    <div class="container top">
         <div id="left">
           <nav>
             <div>
@@ -40,19 +40,19 @@
           <div class="social">
             <a href="#">Follow Us</a>
             <div class="btn">
-              <a href="#"><img src="../assets/img/footer-facebook.png" alt=""></a>
+              <a href="#"><img src="{{ Vite::asset('resources/img/footer-facebook.png')}}" alt=""></a>
             </div>
             <div class="btn">
-              <a href="#"><img src="../assets/img/footer-twitter.png" alt=""></a>
+              <a href="#"><img src="{{ Vite::asset('resources/img/footer-twitter.png')}}" alt=""></a>
             </div>
             <div class="btn">
-              <a href="#"><img src="../assets/img/footer-youtube.png" alt=""></a>
+              <a href="#"><img src="{{ Vite::asset('resources/img/footer-youtube.png')}}" alt=""></a>
             </div>
             <div class="btn">
-              <a href="#"><img src="../assets/img/footer-pinterest.png" alt=""></a>
+              <a href="#"><img src="{{ Vite::asset('resources/img/footer-pinterest.png')}}" alt=""></a>
             </div>
             <div class="btn">
-              <a href="#"><img src="../assets/img/footer-periscope.png" alt=""></a>
+              <a href="#"><img src="{{ Vite::asset('resources/img/footer-periscope.png')}}" alt=""></a>
             </div>
           </div>
         </div>
