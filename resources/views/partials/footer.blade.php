@@ -2,35 +2,16 @@
     <div class="container top">
         <div id="left">
           <nav>
+            @foreach (config('db.footer_menu') as $menu)
             <div>
-              <h3>Dc Comics</h3>
-              <ul>
-                <li><a href="{{ route('characters') }}">Charachters</a></li>
-                <li><a href="{{ route('comics') }}">Comics</a></li>
-                <li><a href="{{ route('movies') }}">Movies</a></li>
-                <li><a href="{{ route('tv') }}">Tv</a></li>
-                <li><a href="{{ route('games') }}">Games</a></li>
-                <li><a href="{{ route('videos') }}">Videos</a></li>
-                <li><a href="{{ route('news') }}">News</a></li>
-              </ul>
+                <h3>{{$menu['sectionName']}}</h3>
+                <ul>
+                    @foreach ($menu['sectionContent'] as $content)
+                        <li><a href="{{ $content['href'] }}">{{$content['name']}}</a></li>
+                    @endforeach
+                </ul>
             </div>
-            <div>
-              <h3>Shop</h3>
-              <ul>
-                <li><a href="#">Shop DC</a></li>
-                <li><a href="#">Shop DC Collectibles</a></li>
-              </ul>
-            </div>
-            <div>
-              <h3>Sites</h3>
-              <ul>
-                <li><a href="#">DC</a></li>
-                <li><a href="#">MAD Magazine</a></li>
-                <li><a href="#">DC Kids</a></li>
-                <li><a href="#">DC Universe</a></li>
-                <li><a href="#">DC Power Visa</a></li>
-              </ul>
-            </div>
+            @endforeach
           </nav>
         </div>
     </div>

@@ -10,14 +10,18 @@
     <div class="container">
         <h1>Current Series</h1>
         <div class="card-group">
+
             @foreach ($comics_list as $comic)
+
             <div class="card">
                 <a class="cover" href="{{ Route('info') }}">
                   <img src="{{$comic['thumb']}}" alt="{{$comic['series']}}">
                 </a>
                 <h4>{{$comic['series']}}</h4>
             </div>
+
             @endforeach
+
         </div>
         <div class="button-container" v-on:click='incrementLoading'>
         <button> Load More </button>
