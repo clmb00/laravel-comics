@@ -381,6 +381,9 @@ section{
                 p:last-of-type{
                     padding-left: 1rem;
                     border-left: 1px solid $black;
+                    &::after{
+                        content: '\25BE';
+                    }
                 }
             }
             .description{

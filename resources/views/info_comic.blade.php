@@ -18,7 +18,7 @@
                 <div class="price_bar">
                     <p><span class="light">U.S. Price: </span> {{ $comic_info['price'] }}</p>
                     <p class="light">AVAILABLE</p>
-                    <p>Check Availability  v</p>
+                    <p>Check Availability </p>
                 </div>
                 <p class="description">{{ $comic_info['description'] }}</p>
                 {{-- se nelle descirzioni ho del testo in htmlm da stampare metto i !! punti di domanda --}}
@@ -74,7 +74,8 @@
                     </li>
                     <li>
                         <h4>On Sale Date:</h4>
-                        <p>{{ $comic_info['sale_date'] }}</p>
+                        <?php $date=date_create($comic_info['sale_date']); ?>
+                        <p>{{ date_format($date, "M d Y") }}</p>
                     </li>
                 </ul>
             </div>
