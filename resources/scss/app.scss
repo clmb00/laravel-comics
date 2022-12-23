@@ -234,12 +234,12 @@ main.comics{
     }
 
     .card{
+        display: inline-block;
         padding-inline: 10px;
         width: $width_card;
     }
 
     .cover{
-        display: inline-block;
         width: 100%;
         aspect-ratio: 1/1;
         img{

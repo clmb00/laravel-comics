@@ -7,7 +7,7 @@
                 <h3>{{$menu['sectionName']}}</h3>
                 <ul>
                     @foreach ($menu['sectionContent'] as $content)
-                        <li><a href="{{ $content['href'] }}">{{$content['name']}}</a></li>
+                        <li><a href="{{ route($content['href']) }}">{{$content['name']}}</a></li>
                     @endforeach
                 </ul>
             </div>

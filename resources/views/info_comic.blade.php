@@ -8,16 +8,18 @@
     <div id="jumbotron"></div>
     <div class="container">
         <div class="cover">
-            <img src="" alt="">
+            <img src="{{ $comic_info['thumb'] }}" alt="{{ $comic_info['series'] }}">
         </div>
         <div class="right">
-            <h2>Action Comics #1000: The Deluxe Edition</h2>
+            <h2>{{ $comic_info['title'] }}</h2>
             <div class="price_bar">
-                <p>U.S. Price 19.99</p>
+                <p>U.S. Price {{ $comic_info['price'] }}</p>
                 <p>AVAILABLE</p>
                 <p>Check Availability</p>
             </div>
-            <p>The celebration of 1,000 issues of Action Comics continues with a new, Deluxe Edition of the amazing comic that won raves when it hit comics shops in April! This hardcover includes all the stories from that issue, plus the tale by writer Paul Levitz and artist Neal Adams that appeared in the Action Comics: 80 Years Of Superman hardcover, as well as all the variant covers, design sketches by Jim Lee for Superman’s new look, scripts for the stories, the original art from the lost story featuring art by Curt Swan and more! Plus: a complete reprint of the stories that started it all—the Superman stories Action Comics #1 and 2 from 1938!</p>
+            <p>{{ $comic_info['description'] }}</p>
+            {{-- se nelle descirzioni ho del testo in htmlm da stampare metto i !! punti di domanda --}}
+            {{-- {{!! $comic_info['description'] !!}} --}}
         </div>
         <div class="left">
             <h4>ADVERTISEMENT</h4>
@@ -28,11 +30,27 @@
                 <ul>
                     <li>
                         <h4>Art By</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere magnam alias quis at itaque assumenda, nobis in sunt aperiam tenetur eveniet exercitationem totam molestiae laborum tempore porro quod perferendis facilis.</p>
+                        <p>
+                        @foreach ($comic_info['artists'] as $artist)
+                            @if ($loop->last)
+                                <span>{{$artist}}</span>
+                            @else
+                                <span>{{$artist}}, </span>
+                            @endif
+                        @endforeach
+                        </p>
                     </li>
                     <li>
                         <h4>Written By</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere magnam alias quis at itaque assumenda, nobis in sunt aperiam tenetur eveniet exercitationem totam molestiae laborum tempore porro quod perferendis facilis.</p>
+                        <p>
+                            @foreach ($comic_info['writers'] as $writer)
+                                @if ($loop->last)
+                                    <span>{{$writer}}</span>
+                                @else
+                                    <span>{{$writer}}, </span>
+                                @endif
+                            @endforeach
+                            </p>
                     </li>
                 </ul>
             </div>
@@ -40,15 +58,15 @@
                 <ul>
                     <li>
                         <h4>Seires</h4>
-                        <p>ACTION COMICS</p>
+                        <p>{{ $comic_info['series'] }}</p>
                     </li>
                     <li>
                         <h4>U.S. Price</h4>
-                        <p>$19.99</p>
+                        <p>{{ $comic_info['price'] }}</p>
                     </li>
                     <li>
                         <h4>On Sale Date</h4>
-                        <p>Oct 02 2018</p>
+                        <p>{{ $comic_info['sale_date'] }}</p>
                     </li>
                 </ul>
             </div>

@@ -13,12 +13,13 @@
 
             @foreach ($comics_list as $comic)
 
-            <div class="card">
-                <a class="cover" href="{{ Route('info') }}">
+            {{-- per le rotte dinamiche al metodo route passare come secondo parametro un array associativo con le chiavi col nome dei parametri dinamici --}}
+            <a class="card" href="{{ Route('info', ['id' => $comic['id']]) }}">
+                <div class="cover">
                   <img src="{{$comic['thumb']}}" alt="{{$comic['series']}}">
-                </a>
+                </div>
                 <h4>{{$comic['series']}}</h4>
-            </div>
+            </a>
 
             @endforeach
 

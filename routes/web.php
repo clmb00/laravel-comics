@@ -43,6 +43,14 @@ Route::get('/videos', function () {
     return view('videos');
 })->name('videos');
 
-Route::get('/info_comic', function () {
-    return view('info_comic');
+// questo se il parametro è opzionale
+// Route:get('/info_comic/{id?}', function($id = null){})
+// altirmenti se non passo il parametro mi da un 404
+Route::get('/info_comic/{id}', function ($id) {
+
+    $comics_list = config('db.comics');
+    $comic_get = array_filter($comics_list, fn($item) => $item['id'] == $id);
+    $comic_info = $comic_get[array_key_first($comic_get)];
+
+    return view('info_comic', compact('comic_info'));
 })->name('info');
