@@ -42,7 +42,23 @@ img{
 }
 
 // HEADER
-header{
+.top-header{
+    height: $top-header-height;
+    background-color: $blue;
+    text-align: right;
+    a{
+        display: inline-block;
+        color: white;
+        margin-left: 3rem;
+        font-size: .7rem;
+        line-height: $top-header-height;
+        &:last-of-type::after{
+            content: '\25BE';
+        }
+    }
+}
+
+.bottom-header{
     height: $header-height;
     background-color: #fff;
 
@@ -66,6 +82,11 @@ header{
         min-width: 30px;
         display: inline-block;
         margin-left: 30px;
+        font-weight: 600;
+        &:last-of-type:after{
+            content: '\25BE';
+            color: $blue;
+        }
         &.active{
             color: $blue;
             border-bottom: 5px solid $blue;
@@ -74,12 +95,37 @@ header{
             }
         }
         a{
-        font-size: .85rem;
-        color: $black;
+        color: $l-black;
         &:hover{
             color: $blue;
         }
         }
+    }
+
+    .search-input{
+        display: flex;
+    }
+
+    input{
+        border: none;
+        border-bottom: 2px solid $blue;
+        background-color: transparent;
+        padding: 8px;
+        font-family: inherit;
+        height: 25px;
+        text-align: right;
+        &:focus{
+            outline: none;
+        }
+        &::placeholder{
+            color: $l-black;
+            opacity: 1;
+            font-weight: 600;
+        }
+    }
+    .search-icon{
+        font-size: .9rem;
+        border-bottom: 2px solid $blue;
     }
 }
 
