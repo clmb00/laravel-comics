@@ -3,6 +3,8 @@
 @use './partials/variables' as *;
 @use './partials/mixin' as *;
 
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap');
+
 // GENERAL
 *{
     margin: 0;
@@ -186,6 +188,7 @@ footer{
     background-size: cover;
     background-position: top;
     height: $jumbo-height;
+    position: relative;
 }
 
 main.comics{
@@ -258,6 +261,208 @@ main.comics{
 }
 
 // SECTION LINKS
+
+section{
+    background-color: $blue;
+    color: white;
+    .container{
+      height: $blue-section-height;
+      @include flex('vertical');
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
+    div{
+      @include flex('both');
+      .logo{
+        width: 50px;
+        margin-right: 10px;
+        img{
+          height: 50px;
+        }
+      }
+      a{
+        font-size: .8rem;
+        white-space: nowrap;
+      }
+    }
+}
+
+// INFO PAGE
+
+.info_jumbo::after{
+    content: '';
+    height: $info-bar-height;
+    width: 100%;
+    background-color: $blue;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 100%;
+}
+
+.width_55{
+    width: 55%;
+}
+
+#info_page{
+
+    position: relative;
+    padding-top: calc($info-bar-height + 50px);
+
+    .cover{
+        width: $cover-info-w;
+        height: $cover-info-h;
+        border: 2px solid $white;
+        position: absolute;
+        top: calc(60px - $cover-info-h);
+        left: 0;
+        overflow: hidden;
+
+        img{
+            object-fit: cover;
+        }
+
+        .hover{
+            position: absolute;
+            width: 100%;
+            height: 16px;
+            background-color: $light-blue;
+            color: white;
+            text-transform: uppercase;
+            font-size: .8em;
+            text-align: center;
+            left: 0;
+            top: calc(100% - 16px);
+            &.type{
+                width: 50%;
+                top: 0;
+            }
+        }
+    }
+
+    .info{
+        display: flex;
+
+        .right{
+            width: 30%;
+            flex-shrink: 0;
+            h4{
+                color: $grey;
+                font-size: .8rem;
+                text-align: right;
+                margin-bottom: .5rem;
+            }
+        }
+
+        .left{
+            padding-right: 2rem;
+            h2{
+                text-transform: uppercase;
+                color: $dark-blue;
+                font-size: 1.7rem;
+                margin-bottom: 1rem;
+            }
+            .price_bar{
+                background-color: $green;
+                color: white;
+                display: flex;
+                margin-bottom: .5rem;
+                font-size: .9em;
+                .light{
+                    color: $light-green;
+                }
+                p{
+                    padding: .8rem;
+                }
+                p:first-of-type{
+                    width: 60%;
+                    flex-shrink: 0;
+                }
+                p:last-of-type{
+                    padding-left: 1rem;
+                    border-left: 1px solid $black;
+                }
+            }
+            .description{
+                color: $grey;
+                line-height: 1.4rem;
+                margin-bottom: 4rem;
+            }
+        }
+    }
+}
+
+#more_info{
+
+    background-color: $light-grey;
+    border-top: 1px solid $mid-grey;
+
+    .container{
+        padding-block: 2rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+
+    h3{
+        color: $dark-blue;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid $mid-grey;
+    }
+
+    ul{
+        margin-bottom: 60px;
+    }
+
+    li{
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        font-size: .8em;
+        border-bottom: 1px solid $mid-grey;
+        padding-block: .5rem;
+
+        h4{
+            color: $grey;
+        }
+    }
+
+    a{
+        color: $blue;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+
+}
+
+#info_links{
+    background-color: $light-grey;
+    border-top: 1px solid $mid-grey;
+    color: $grey;
+    .container{
+        height: auto;
+    }
+    .container > div{
+        flex-grow: 1;
+        height: 100%;
+        padding-block: 1rem;
+        padding-inline: 10px;
+        border-inline: 1px solid $mid-grey;
+        justify-content: space-between;
+        .logo{
+            margin-left: 10px;
+            margin-right: 0;
+            img{
+                height: 40px;
+            }
+        }
+        a{
+            align-self: flex-start;
+            justify-items: flex-start;
+            color: $grey;
+        }
+    }
+}
 
 section{
     background-color: $blue;
