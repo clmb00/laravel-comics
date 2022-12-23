@@ -13,6 +13,8 @@
             </div>
             @endforeach
           </nav>
+          <p>All Site Content TM and &#xa9; 2020 DC Enteratneiment, unless otherwise <a href="#">noted here</a>. All rights reserved.</p>
+          <p><a href="#">Cookie Settings</a></p>
         </div>
     </div>
     <div id="social-bar">

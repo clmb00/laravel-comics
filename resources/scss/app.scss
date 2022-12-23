@@ -135,13 +135,24 @@ footer{
     background-image: url("../img/footer-bg.jpg");
     background-size: cover;
     .container.top{
-      background-image: url("../img/dc-logo-bg.png");
-      background-position: right;
-      background-repeat: no-repeat;
+        background-image: url("../img/dc-logo-bg.png");
+        background-position: right;
+        background-repeat: no-repeat;
+        height: calc($footer-height + 40px);
     }
     #left{
-      padding-block: 20px;
-      height: $footer-height;
+        padding-block: 20px;
+        height: $footer-height;
+    }
+    p{
+        color: $grey;
+        font-size: .8rem;
+        a{
+            color: $blue;
+            &:hover{
+                text-decoration: underline
+            }
+        }
     }
 }
 

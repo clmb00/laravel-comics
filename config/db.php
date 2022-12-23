@@ -281,20 +281,11 @@ return [
               'name'=> 'Games',
               'href'=> 'games'
             ], [
-              'name'=> 'Collectibles',
-              'href'=> 'collectibles'
-            ], [
               'name'=> 'Videos',
               'href'=> 'videos'
             ], [
-              'name'=> 'Fans',
-              'href'=> 'fans'
-            ], [
               'name'=> 'News',
               'href'=> 'news'
-            ], [
-              'name'=> 'Shop',
-              'href'=> 'shop'
             ]
           ]
         ], [
