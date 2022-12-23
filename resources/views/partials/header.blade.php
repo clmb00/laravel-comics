@@ -13,7 +13,14 @@
           <nav>
             <ul>
                 @foreach (config('db.main_menu') as $menu)
-                    <li class="{{Route::currentRouteName() == $menu["href"] ? 'active' : ''}}"><a href="{{ route($menu["href"]) }}">{{ strtoupper($menu["pageName"])}}</a></li>
+                <?php
+                    if((Route::currentRouteName() == $menu["href"]) || ($menu["href"] == 'comics' && Route::currentRouteName() == 'info')){
+                        $class = 'active';
+                    } else {
+                        $class = '';
+                    }
+                ?>
+                <li class="{{ $class }}"><a href="{{ route($menu['href']) }}">{{ strtoupper($menu["pageName"])}}</a></li>
                 @endforeach
             </ul>
           </nav>
